@@ -1,21 +1,20 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 import {createMarkup} from "./js/render-functions.js"
 import {searchImages} from "./js/pixabay-api.js"
 
-const searchForm = document.querySelector('.form');
-const gallery = document.querySelector('.gallery');
-const loader = document.querySelector('.loader');
-
-const lightbox = new SimpleLightbox('.gallery a', 
-{
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
+
+const searchForm = document.querySelector('.form');
+const gallery = document.querySelector('.gallery');
+const loader = document.querySelector('.loader');
 
 searchForm.addEventListener('submit', handleSearch);
 loader.style.display = 'none';
@@ -23,7 +22,7 @@ loader.style.display = 'none';
 function handleSearch(event) {
   event.preventDefault();
 
-  loader.style.display = 'grid';
+  loader.style.display = 'inline-block';
 
   gallery.innerHTML = '';
   const form = event.currentTarget;
@@ -47,6 +46,5 @@ function handleSearch(event) {
   })
   .catch(error => {
     console.error('Error:', error);
-  })
-  .finally(() => loader.style.display = 'none');
+  });
 }

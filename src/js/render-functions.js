@@ -1,3 +1,5 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 export function createMarkup(arr) {
 
@@ -38,6 +40,7 @@ export function createMarkup(arr) {
   </div>`
     )
     .join('');
-    lightbox.refresh()
 }
+
+
 
