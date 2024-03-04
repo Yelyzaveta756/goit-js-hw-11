@@ -7,7 +7,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import {createMarkup} from "./js/render-functions.js"
 import {searchImages} from "./js/pixabay-api.js"
 
-const lightbox = new SimpleLightbox('.gallery a ', {
+const lightbox = new SimpleLightbox('.gallery div ', {
   captionsData: 'alt',
   captionDelay: 250,
 });
